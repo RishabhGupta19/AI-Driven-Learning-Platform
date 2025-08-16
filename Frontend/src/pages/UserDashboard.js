@@ -14,7 +14,7 @@ const UserDashboard = () => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get("http://localhost:5000/api/videos");
+      const res = await axios.get("https://ai-driven-learning-platform.onrender.com/api/videos");
       setVideos(res.data);
     };
     fetchVideos();
