@@ -43,7 +43,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import MyUploads from "./pages/MyUploads";
-
+const express = require("express");
+const app = express();
 
 //  NEW IMPORT for video detail page
 import VideoDetails from "./pages/VideoDetails";
@@ -51,7 +52,7 @@ import VideoDetails from "./pages/VideoDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-//app.use(express.static("public"));
+app.use(express.static("public"));
 
 function App() {
   return (
