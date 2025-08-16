@@ -26,7 +26,7 @@ const VideoDetails = () => {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/videos/${id}`);
+        const res = await axios.get(`https://ai-driven-learning-platform.onrender.com/api/videos/${id}`);
         setVideo(res.data);
         setTranscription(res.data.transcription || "");
       } catch (err) {
@@ -44,7 +44,7 @@ const VideoDetails = () => {
       try {
         const langCode = languageCodeMap[language] || "en";
 
-        const res = await axios.post(`http://localhost:5000/api/videos/${id}/translate`, {
+        const res = await axios.post(`https://ai-driven-learning-platform.onrender.com/api/videos/${id}/translate`, {
           targetLanguage: langCode,
         });
 
@@ -58,7 +58,7 @@ const VideoDetails = () => {
 
   const handleLike = async () => {
     try {
-      const res = await axios.post(`http://localhost:5000/api/videos/${id}/like`);
+      const res = await axios.post(`https://ai-driven-learning-platform.onrender.com/api/videos/${id}/like`);
       setVideo(res.data);
     } catch (err) {
       console.error("Like failed", err);
@@ -67,7 +67,7 @@ const VideoDetails = () => {
 
   const handleDislike = async () => {
     try {
-      const res = await axios.post(`http://localhost:5000/api/videos/${id}/dislike`);
+      const res = await axios.post(`https://ai-driven-learning-platform.onrender.com/api/videos/${id}/dislike`);
       setVideo(res.data);
     } catch (err) {
       console.error("Dislike failed", err);
@@ -77,7 +77,7 @@ const VideoDetails = () => {
   const handleComment = async () => {
     if (!comment.trim()) return;
     try {
-      const res = await axios.post(`http://localhost:5000/api/videos/${id}/comment`, {
+      const res = await axios.post(`https://ai-driven-learning-platform.onrender.com/api/videos/${id}/comment`, {
         text: comment,
       });
       setVideo(res.data);
