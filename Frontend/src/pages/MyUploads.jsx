@@ -13,7 +13,7 @@ const MyUploads = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/videos");
+        const res = await axios.get("https://ai-driven-learning-platform.onrender.com/api/videos");
         setVideos(res.data);
       } catch (err) {
         console.error("Failed to fetch videos", err);
@@ -34,7 +34,7 @@ const MyUploads = () => {
   const handleDelete = async (videoId) => {
   console.log("Attempting to delete video ID:", videoId); //  add this
   try {
-    await axios.delete(`http://localhost:5000/api/videos/${videoId}`);
+    await axios.delete(`https://ai-driven-learning-platform.onrender.com/api/videos/${videoId}`);
     setVideos((prev) => prev.filter((video) => video._id !== videoId));
   } catch (err) {
     console.error("Failed to delete video", err);
