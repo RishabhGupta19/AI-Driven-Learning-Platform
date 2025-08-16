@@ -42,7 +42,7 @@ const AdminDashboard = () => {
       alert("Upload successful!");
 
       // Save to backend
-      const saveResponse = await fetch("https://ai-driven-learning-platform.onrender.com/api/videos", {
+      const saveResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/videos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
